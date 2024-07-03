@@ -1,0 +1,15 @@
+{
+    "name": "Nasa Build maven Spring Workflow",
+    "description": "Nasa Build maven Spring CI starter workflow.",
+    "iconName": "example-icon",
+    "categories": [
+        "Java",
+        "Maven",
+        "SpringBoot"
+    ],
+    "filePatterns": [
+        ".*\\.java$",
+        "^Dockerfile",
+        ".*\\.md$"
+    ]
+}
