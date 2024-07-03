@@ -1,17 +1,24 @@
 name: Nasa Build maven Spring CI
 
 on:
-  push:
-    branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
+  workflow_dispatch:
+  check_run:
+    types:
+      - completed
+
+permissions:
+  checks: read
+  contents: write
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Run a one-line script
-        run: echo Hello from Octo Organization
+  maven-cd:
+    uses: NationalLibraryOfNorway/nasa-workflows/.github/workflows/build-mvn-spring-app.yaml@main
+    secrets:
+      ARTIFACTORY_NB: ${{ secret.ARTIFACTORY_NB }}
+      ARTIFACTORY_USER_NASA: ${{ secrets.ARTIFACTORY_USER_NASA }}
+      ARTIFACTORY_PASS_NASA: ${{ secrets.ARTIFACTORY_PASS_NASA }}
+      PROXY_NB: ${{ secrets.PROXY_NB }}
+      DOCKER_REGISTRY_NB: ${{ secret.DOCKER_REGISTRY_NB }}
+      DOCKER_HARBOR_USER_NASA: ${{ secret.DOCKER_HARBOR_USER_NASA }}
+      DOCKER_HARBOR_PASS_NASA: ${{ secret.DOCKER_HARBOR_PASS_NASA }}
+      NVD_REPO: ${{ secret.NVD_REPO }}
