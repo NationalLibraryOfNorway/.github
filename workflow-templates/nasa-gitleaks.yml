@@ -1,4 +1,4 @@
-name: nasa-gitleaks
+name: Nasa Gitleaks
 on:
   pull_request:
   push:
