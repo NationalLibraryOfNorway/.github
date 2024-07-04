@@ -15,13 +15,6 @@ permissions:
   actions: read
   checks: write
 
-env:
-  MAVEN_IMAGE: harbor.nb.no/nationallibraryofnorway/docker-maven-non-root:3.8.8-jdk-21-slim-helm3
-  DEV_REPLICAS: 1
-  PROD_REPLICAS: 1
-  SERVICE_NAME: "<service-name>"
-  DEPLOY_E2E: "true"
-
 jobs:
   nasa-ci:
     uses: NationalLibraryOfNorway/nasa-workflows/.github/workflows/build-mvn-spring-app.yaml@main
@@ -34,9 +27,10 @@ jobs:
       DOCKER_HARBOR_USER_NASA: ${{ secrets.DOCKER_HARBOR_USER_NASA }}
       DOCKER_HARBOR_PASS_NASA: ${{ secrets.DOCKER_HARBOR_PASS_NASA }}
       NVD_REPO: ${{ secrets.NVD_REPO }}
-    env:
-      MAVEN_IMAGE: ${{ env.MAVEN_IMAGE }}
-      DEV_REPLICAS: ${{ env.DEV_REPLICAS }}
-      PROD_REPLICAS: ${{ env.PROD_REPLICAS }}
-      SERVICE_NAME: ${{ env.SERVICE_NAME }}
-      DEPLOY_E2E: ${{ env.DEPLOY_E2E }}
+
+    with:
+      maven-image: harbor.nb.no/nationallibraryofnorway/docker-maven-non-root:3.8.8-jdk-21-slim-helm3
+      dev-replicas: 1
+      prod-replicas: 1
+      service-name: "<service-name>"
+      deploy-e2e: "false"
