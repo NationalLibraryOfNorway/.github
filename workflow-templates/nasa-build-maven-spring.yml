@@ -10,8 +10,16 @@ permissions:
   checks: read
   contents: write
 
+env:
+  MAVEN_IMAGE: harbor.nb.no/nationallibraryofnorway/docker-maven-non-root:3.8.8-jdk-21-slim-helm3
+  DEV_REPLICAS: 1
+  PROD_REPLICAS: 1
+  SERVICE_NAME: "<service-name>"
+  DEPLOY_E2E: "true"
+
+
 jobs:
-  maven-cd:
+  build-maven-spring:
     uses: NationalLibraryOfNorway/nasa-workflows/.github/workflows/build-mvn-spring-app.yaml@main
     secrets:
       ARTIFACTORY_NB: ${{ secret.ARTIFACTORY_NB }}
