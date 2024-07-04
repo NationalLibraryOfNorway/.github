@@ -1,0 +1,14 @@
+name: Nasa CodeQL
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '15 5 * * 3'
+
+jobs:
+  nasa-codeql:
+    uses: NationalLibraryOfNorway/nasa-workflows/.github/workflows/codeql.yaml@main
+    with:
+      java-version: 21
