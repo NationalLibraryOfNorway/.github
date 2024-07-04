@@ -26,11 +26,11 @@ jobs:
   nasa-ci:
     uses: NationalLibraryOfNorway/nasa-workflows/.github/workflows/build-mvn-spring-app.yaml@main
     secrets:
-      ARTIFACTORY_NB: ${{ secret.ARTIFACTORY_NB }}
+      ARTIFACTORY_NB: ${{ secrets.ARTIFACTORY_NB }}
       ARTIFACTORY_USER_NASA: ${{ secrets.ARTIFACTORY_USER_NASA }}
       ARTIFACTORY_PASS_NASA: ${{ secrets.ARTIFACTORY_PASS_NASA }}
       PROXY_NB: ${{ secrets.PROXY_NB }}
-      DOCKER_REGISTRY_NB: ${{ secret.DOCKER_REGISTRY_NB }}
-      DOCKER_HARBOR_USER_NASA: ${{ secret.DOCKER_HARBOR_USER_NASA }}
-      DOCKER_HARBOR_PASS_NASA: ${{ secret.DOCKER_HARBOR_PASS_NASA }}
-      NVD_REPO: ${{ secret.NVD_REPO }}
+      DOCKER_REGISTRY_NB: ${{ secrets.DOCKER_REGISTRY_NB }}
+      DOCKER_HARBOR_USER_NASA: ${{ secrets.DOCKER_HARBOR_USER_NASA }}
+      DOCKER_HARBOR_PASS_NASA: ${{ secrets.DOCKER_HARBOR_PASS_NASA }}
+      NVD_REPO: ${{ secrets.NVD_REPO }}
