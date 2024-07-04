@@ -1,0 +1,14 @@
+name: nasa-gitleaks
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 4 * * *" # run once a day at 4 AM
+
+
+jobs:
+  nasa-gitleaks:
+    uses: NationalLibraryOfNorway/nasa-workflows/.github/workflows/gitleaks.yaml@main
+    secrets:
+      GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
