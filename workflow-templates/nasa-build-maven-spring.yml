@@ -1,14 +1,19 @@
 name: Nasa Build maven Spring CI
 
 on:
-  workflow_dispatch:
-  check_run:
-    types:
-      - completed
+  push:
+    branches:
+      - main
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}
+  cancel-in-progress: true
 
 permissions:
-  checks: read
-  contents: write
+  contents: read
+  actions: read
+  checks: write
 
 env:
   MAVEN_IMAGE: harbor.nb.no/nationallibraryofnorway/docker-maven-non-root:3.8.8-jdk-21-slim-helm3
@@ -17,9 +22,8 @@ env:
   SERVICE_NAME: "<service-name>"
   DEPLOY_E2E: "true"
 
-
 jobs:
-  build-maven-spring:
+  nasa-ci:
     uses: NationalLibraryOfNorway/nasa-workflows/.github/workflows/build-mvn-spring-app.yaml@main
     secrets:
       ARTIFACTORY_NB: ${{ secret.ARTIFACTORY_NB }}
