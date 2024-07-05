@@ -4,6 +4,21 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '**.md'
+      - '**.MD'
+      - '.gitignore'
+      - '.editorconfig'
+      - '.java-version'
+      - 'Tiltfile'
+      - 'LICENSE'
+      - 'CODEOWNERS'
+      - 'docker/**'
+      - 'lokalutvikling/**'
+      - 'docs/**'
+      - 'k8s-local/**'
+      - '.github/*.yml'
+      - '.github/*.yaml'
   pull_request:
 
 concurrency:
