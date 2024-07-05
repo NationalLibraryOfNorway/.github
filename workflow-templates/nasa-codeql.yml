@@ -17,5 +17,4 @@ jobs:
       PROXY_NB: ${{ secrets.PROXY_NB }}
       NVD_REPO: ${{ secrets.NVD_REPO }}
     with:
-      java-version: 21
       maven-image: harbor.nb.no/githubworkflows/github-workflow-maven-non-root:3.8.8-jdk-21-slim-helm3
