@@ -1,9 +1,9 @@
 name: Nasa CodeQL
 on:
   push:
-    branches: [main]
+    branches: [main, master]
   pull_request:
-    branches: [main]
+    branches: [main, master]
   schedule:
     - cron: '15 5 * * 3'
 

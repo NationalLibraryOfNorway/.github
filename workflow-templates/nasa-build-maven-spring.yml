@@ -34,15 +34,12 @@ jobs:
   nasa-ci:
     uses: NationalLibraryOfNorway/nasa-workflows/.github/workflows/build-mvn-spring-app.yaml@main
     secrets:
-      ARTIFACTORY_NB: ${{ secrets.ARTIFACTORY_NB }}
-      ARTIFACTORY_USER_NASA: ${{ secrets.ARTIFACTORY_USER_NASA }}
-      ARTIFACTORY_PASS_NASA: ${{ secrets.ARTIFACTORY_PASS_NASA }}
-      PROXY_NB: ${{ secrets.PROXY_NB }}
-      DOCKER_REGISTRY_NB: ${{ secrets.DOCKER_REGISTRY_NB }}
-      DOCKER_HARBOR_USER_NASA: ${{ secrets.DOCKER_HARBOR_USER_NASA }}
-      DOCKER_HARBOR_PASS_NASA: ${{ secrets.DOCKER_HARBOR_PASS_NASA }}
-      NVD_REPO: ${{ secrets.NVD_REPO }}
-
+      VAULT_URL: ${{ secrets.NB_VAULT_URL }} 
+      VAULT_SECRET_PATH: ${{ secrets.NASA_VAULT_SECRET_PATH }}
+      VAULT_ROLE: ${{ secrets.NASA_APPROLE_ROLE }}
+      VAULT_ROLE_ID: ${{ secrets.NASA_APPROLE_ROLE_ID }}
+      VAULT_SECRET_ID: ${{ secrets.NASA_APPROLE_SECRET_ID }}
+      
     with:
       maven-image: harbor.nb.no/githubworkflows/github-workflow-maven-non-root:3.8.8-jdk-21-slim-helm3
       dev-replicas: 1
