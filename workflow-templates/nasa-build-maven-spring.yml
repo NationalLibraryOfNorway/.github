@@ -36,9 +36,9 @@ jobs:
     secrets:
       VAULT_URL: ${{ secrets.NB_VAULT_URL }} 
       VAULT_SECRET_PATH: ${{ secrets.NASA_VAULT_SECRET_PATH }}
-      VAULT_ROLE: ${{ secrets.NASA_APPROLE_ROLE }}
-      VAULT_ROLE_ID: ${{ secrets.NASA_APPROLE_ROLE_ID }}
-      VAULT_SECRET_ID: ${{ secrets.NASA_APPROLE_SECRET_ID }}
+      VAULT_ROLE: ${{ secrets.NASA_VAULT_ROLE }}
+      VAULT_ROLE_ID: ${{ secrets.NASA_VAULT_ROLE_ID }}
+      VAULT_SECRET_ID: ${{ secrets.NASA_VAULT_SECRET_ID }}
       
     with:
       maven-image: harbor.nb.no/githubworkflows/github-workflow-maven-non-root:3.8.8-jdk-21-slim-helm3
