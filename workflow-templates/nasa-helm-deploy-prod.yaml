@@ -1,4 +1,4 @@
-name: Nasa Build maven Spring CI
+name: Nasa Deploy Prod CI
 
 on:
   release:
