@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   nasa-ci:
-    uses: NationalLibraryOfNorway/nasa-workflows/.github/workflows/build-mvn-spring-app.yaml@main
+    uses: NationalLibraryOfNorway/nasa-workflows/.github/workflows/helm-deploy-prod.yaml@main
     secrets:
       VAULT_URL: ${{ secrets.NB_VAULT_URL }} 
       VAULT_SECRET_PATH: ${{ secrets.NASA_VAULT_SECRET_PATH }}
