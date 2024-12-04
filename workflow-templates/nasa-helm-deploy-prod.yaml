@@ -18,7 +18,3 @@ jobs:
       VAULT_ROLE: ${{ secrets.NASA_VAULT_ROLE }}
       VAULT_ROLE_ID: ${{ secrets.NASA_VAULT_ROLE_ID }}
       VAULT_SECRET_ID: ${{ secrets.NASA_VAULT_SECRET_ID }}
-      
-    with:
-      prod-replicas: 1
-      service-name: "<service-name>"
