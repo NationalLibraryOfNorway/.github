@@ -39,6 +39,7 @@ jobs:
       VAULT_ROLE: ${{ secrets.NASA_VAULT_ROLE }}
       VAULT_ROLE_ID: ${{ secrets.NASA_VAULT_ROLE_ID }}
       VAULT_SECRET_ID: ${{ secrets.NASA_VAULT_SECRET_ID }}
+      NASA_NBNO_API_TEST_PATH: ${{ secrets.NASA_NBNO_API_TEST_PATH }}
 
     with:
       maven-image: harbor.nb.no/githubworkflows/github-workflow-maven-non-root:3.8.8-jdk-21-slim-helm3
