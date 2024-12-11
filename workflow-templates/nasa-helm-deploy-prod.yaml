@@ -18,4 +18,4 @@ jobs:
       VAULT_ROLE: ${{ secrets.NASA_VAULT_ROLE }}
       VAULT_ROLE_ID: ${{ secrets.NASA_VAULT_ROLE_ID }}
       VAULT_SECRET_ID: ${{ secrets.NASA_VAULT_SECRET_ID }}
-      NASA_NBNO_API_TEST_PATH: ${{ secrets.NASA_NBNO_API_TEST_PATH }}
+      NASA_NBNO_API_TEST_PAT: ${{ secrets.NASA_NBNO_API_TEST_PAT }}
