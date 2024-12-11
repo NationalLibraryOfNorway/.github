@@ -1,4 +1,5 @@
 {
     "name": "Nasa Helm Deploy Prod Workflow",
-    "description": "Nasa Helm Deploy Prod CI starter workflow."
+    "description": "Nasa Helm Deploy Prod CI starter workflow.",
+    "iconName": "helm"
 }
