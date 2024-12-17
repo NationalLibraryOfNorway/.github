@@ -42,4 +42,4 @@ jobs:
       NASA_NBNO_API_TEST_PAT : ${{ secrets.NASA_NBNO_API_TEST_PAT }}
 
     with:
-      maven-image: harbor.nb.no/githubworkflows/github-workflow-maven-non-root:3.8.8-jdk-21-slim-helm3
+      maven-image: harbor.nb.no/githubworkflows/github-workflow-maven-non-root:3.9.9-jdk-21-slim-helm3
