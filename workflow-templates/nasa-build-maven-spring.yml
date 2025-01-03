@@ -43,3 +43,10 @@ jobs:
 
     with:
       maven-image: harbor.nb.no/githubworkflows/github-workflow-maven-non-root:3.9.9-jdk-21-slim-helm3
+
+# Other images:
+#
+# harbor.nb.no/githubworkflows/github-workflow-maven-non-root:3.9.9-jdk-17-slim-helm3
+#
+# harbor.nb.no/githubworkflows/github-workflow-maven-non-root:3.9.9-jdk-11-slim-helm3
+#
