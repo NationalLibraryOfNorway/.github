@@ -1,7 +1,9 @@
 name: Nasa Gitleaks
 on:
-  pull_request:
+  pull_request_target:
   push:
+    branches:
+      - main
   workflow_dispatch:
   schedule:
     - cron: "0 4 * * *" # run once a day at 4 AM
