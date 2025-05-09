@@ -1,6 +1,7 @@
 name: Nasa Build maven Spring CI
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -32,7 +33,7 @@ permissions:
 
 jobs:
   nasa-ci:
-    uses: NationalLibraryOfNorway/nasa-workflows/.github/workflows/build-mvn-spring-app.yaml@main
+    uses: NationalLibraryOfNorway/nasa-workflows/.github/workflows/build-mvn-spring-app-v1.yaml@main
     secrets:
       VAULT_URL: ${{ secrets.NB_VAULT_URL }} 
       VAULT_SECRET_PATH: ${{ secrets.NASA_VAULT_SECRET_PATH }}
@@ -42,11 +43,5 @@ jobs:
       NASA_NBNO_API_TEST_PAT : ${{ secrets.NASA_NBNO_API_TEST_PAT }}
 
     with:
-      maven-image: harbor.nb.no/githubworkflows/github-workflow-maven-non-root:3.9.9-jdk-21-slim-helm3
-
-# Other images:
-#
-# harbor.nb.no/githubworkflows/github-workflow-maven-non-root:3.9.9-jdk-17-slim-helm3
-#
-# harbor.nb.no/githubworkflows/github-workflow-maven-non-root:3.9.9-jdk-11-slim-helm3
-#
+      java-version: '21'
+      maven-version: '3.9.9'
