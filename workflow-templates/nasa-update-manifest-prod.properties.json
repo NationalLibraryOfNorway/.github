@@ -1,0 +1,5 @@
+{
+    "name": "Nasa Update Manifest Prod Workflow",
+    "description": "Nasa Update Manifest Prod CI starter workflow.",
+    "iconName": "kustomize"
+}

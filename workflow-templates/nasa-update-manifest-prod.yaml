@@ -1,0 +1,20 @@
+name: Nasa Update Manifest Prod CI
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+  actions: read
+  checks: write
+
+jobs:
+  nasa-ci:
+    uses: NationalLibraryOfNorway/nasa-workflows/.github/workflows/update-manifest-prod.yaml@main
+    secrets:
+      VAULT_URL: ${{ secrets.NB_VAULT_URL }} 
+      VAULT_SECRET_PATH: ${{ secrets.NASA_VAULT_SECRET_PATH }}
+      VAULT_ROLE: ${{ secrets.NASA_VAULT_ROLE }}
+      VAULT_ROLE_ID: ${{ secrets.NASA_VAULT_ROLE_ID }}
+      VAULT_SECRET_ID: ${{ secrets.NASA_VAULT_SECRET_ID }}
