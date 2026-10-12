@@ -1,0 +1,13 @@
+{
+    "name": "Nasa Nightly CVE Workflow",
+    "description": "Nasa Nightly CVE CI starter workflow.",
+    "iconName": "java",
+    "categories": [
+        "Java",
+        "Maven"
+    ],
+    "filePatterns": [
+        "pom.xml$",
+        ".*\\.java$"
+    ]
+}

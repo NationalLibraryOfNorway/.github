@@ -1,0 +1,23 @@
+name: Nasa Nightly CVE scan
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * 1-5'
+
+permissions:
+  contents: read
+
+jobs:
+  nightly-cve:
+    uses: NationalLibraryOfNorway/nasa-workflows/.github/workflows/nightly-cve.yml@main
+    secrets:
+      VAULT_URL: ${{ secrets.NB_VAULT_URL }}
+      VAULT_SECRET_PATH: ${{ secrets.NASA_VAULT_SECRET_PATH }}
+      VAULT_ROLE: ${{ secrets.NASA_VAULT_ROLE }}
+      VAULT_ROLE_ID: ${{ secrets.NASA_VAULT_ROLE_ID }}
+      VAULT_SECRET_ID: ${{ secrets.NASA_VAULT_SECRET_ID }}
+      NASA_GITHUB_SLACK_WEBHOOK_URL: ${{ secrets.NASA_GITHUB_SLACK_WEBHOOK_URL }}
+    with:
+      java-version: '25'
+      maven-version: '3.9.16'
